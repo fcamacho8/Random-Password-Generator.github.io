@@ -18,39 +18,37 @@ var upperCases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "1234567890";
 var specialCharacters = "!@#$%^&*()";
 
-
 function createPassword() {
   alert("Answer the following");
-  lowerCase = confirm("Do you want lower cases on your password?");
-  upperCases = confirm("Do you want upper cases on your password?");
-  numbers = confirm("Do you want number on your password?");
-  specialCharacters = confirm("Do you want special characters on your password?");
-    passwordLength = parseInt(prompt("Please enter a length password. Choose between 8 and 128 characters"))
+  askLowerCase = confirm("Do you want lower cases on your password?");
+  askUpperCases = confirm("Do you want upper cases on your password?");
+  askNumbers = confirm("Do you want number on your password?");
+  askSpecialCharacters = confirm("Do you want special characters on your password?");
+    askPasswordLength = parseInt(prompt("Please enter a length password. Choose between 8 and 128 characters"))
      if (passwordLength < 8 || passwordLength > 128){
     prompt("Invalid number. Please enter a number between 8 and 128.");
   password = '';
   };
  
 
-  if (lowerCase === true) {
-    randoLowerCase();
+  if (askLowerCase === true) {
+    password = password + lowerCase
   };
 
-  if (upperCases === true) {
-    randomUpperCase();
+  if (askUpperCases === true) {
+    password = password + upperCases
   };
 
-  if (numbers === true) {
-    randomNumbers();
+  if (askNumbers === true) {
+    password = password + numbers
   };
 
-  if (specialCharacters === true) {
-    randomSpecialChar();
+  if (askSpecialCharacters === true) {
+    password = password + specialCharacters
     return password
   }
   
-  
-  if (cap == false && low == false && sym == false && num == true) {
+    if (lowerCase === false && upperCases === false && numbers === false && specialCharacters === false) {
     alert("You must choose at least one");
   }
     password += randGen();
